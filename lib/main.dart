@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget{
+class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp>  with SingleTickerProviderStateMixin {
-  
-
+class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
@@ -21,51 +19,55 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin{
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   TabController controller;
   @override
   void initState() {
-    // TODO: implement initState
+    //
     super.initState();
     controller = new TabController(
-    length: 3,
-    initialIndex: 0,
-    vsync: this,
-  );
+      length: 3,
+      initialIndex: 0,
+      vsync: this,
+    );
   }
+
   @override
   Widget build(BuildContext context) {
     Color whatsAppColor = Color(0xFF32642E);
     return Scaffold(
       appBar: AppBar(
-        bottom: TabBar(
-          indicatorColor:Colors.white ,
+        bottom:TabBar(
+          indicatorColor: Colors.white,
           controller: controller,
           tabs: <Widget>[
-            Tab(child: Text("chats"),),
-            Tab(child: Text("status"),),
-            Tab(child: Text("calls"),)
+            Tab(child: Text("CHATS"),),
+            Tab(child: Text("STATUS"),),
+            Tab(child: Text("CALLS"),)
           ],
-          
         ),
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.search),
-          color: Colors.white,
-          onPressed: (){
-            //TODO
-          },),
-          IconButton(icon: Icon(Icons.more_vert),
-          onPressed: (){
-            //TODO
-          },)
+          IconButton(
+            icon: Icon(Icons.search),
+            color: Colors.white,
+            onPressed: () {
+              //
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.more_vert),
+            onPressed: () {
+              //
+            },
+          )
         ],
         backgroundColor: whatsAppColor,
         title: Text('WhatsApp'),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          //TODO
-          
+        onPressed: () {
+          //
         },
         child: Icon(Icons.chat),
         backgroundColor: whatsAppColor,
